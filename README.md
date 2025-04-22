@@ -1,4 +1,4 @@
-# FCM_test_android
+# FCM_test_android_kivy
 firebase push notification for android
 The attached file is based on the "fox520 pushyy" project, with some modifications and comments added.
 the original link: https://github.com/Fox520/pushyy
