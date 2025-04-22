@@ -139,3 +139,6 @@ https://us-central1-notification-/<project namd>.net/sendPushNotification
 you can use it for test
 A special thanks to the authors and contributors of the https://github.com/Fox520/pushyy/tree/main/src/python project.
 his work made it possible to integrate Firebase Cloud Messaging into a Kivy-based Android application.
+
+for ios push notification, link to:
+https://discord.com/channels/423249981340778496/713442856190083094 and search for the author: "Cheaterman", or the title "Push notifications on iOS"
