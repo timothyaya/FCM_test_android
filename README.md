@@ -141,4 +141,5 @@ A special thanks to the authors and contributors of the https://github.com/Fox52
 his work made it possible to integrate Firebase Cloud Messaging into a Kivy-based Android application.
 
 for ios push notification, link to:
+https://github.com/kivy/kivy-ios/issues/964 or
 https://discord.com/channels/423249981340778496/713442856190083094 and search for the author: "Cheaterman", or the title "Push notifications on iOS"
