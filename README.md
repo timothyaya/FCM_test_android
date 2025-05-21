@@ -83,8 +83,10 @@ the steps:
    6.6 android.gradle_dependencies = com.google.firebase:firebase-messaging:24.1.1, com.google.code.gson:gson:2.8.9, com.google.firebase:firebase-analytics
        For firebase-messaging and gson, refer to the official repositories for the latest versions.
        analytics can be left blank if unused.
-   
+
+   ### don't use services if lib/ is set in buildozer, because it will sometimes causes app crash
    6.7 Set services = Myservice:python_notification_handler.py
+   
    
 At this point, the setup should be complete. You can now go to Firebase to create and test a message notification.
 The contents of python_notification_handler.py and the Cloud Functions setup will be provided later.
@@ -111,7 +113,7 @@ if platform == "android":
 ```
 use the class at on_start() of class mainapp
 
-
+### don't use services if lib/ is set in buildozer, because it will sometimes causes app crash
 in python_notification_handler.py:
 add below for start_foreground, and add  start_foreground() in if name == 'main':
 ```
