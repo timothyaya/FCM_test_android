@@ -37,8 +37,7 @@ public class PlatformIntermediate {
 
     public static void addbackroundMessage(Map<String, Object> remoteMessageMap, Context context) {
         //try {
-        //    tw.com.famiclean.wh_fc.ServiceMyservice.start(org.kivy.android.PythonActivity.mActivity, "");
-            // tw.com.famiclean.wh_FC.ServiceMyservice.start(org.kivy.android.PythonActivity.mActivity, "");
+        //    com.test.testapp.ServiceMyservice.start(org.kivy.android.PythonActivity.mActivity, "");
         //} catch (Exception e) {
         //    Log.d("PlatformIntermediate", "Exception occurred while trying to start service: " + e.getMessage());
         //}
