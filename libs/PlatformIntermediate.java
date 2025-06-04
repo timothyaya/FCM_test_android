@@ -36,13 +36,13 @@ public class PlatformIntermediate {
     }
 
     public static void addbackroundMessage(Map<String, Object> remoteMessageMap, Context context) {
-        try {
-            com.waterfall.youtube.ServiceMyservice.start(org.kivy.android.PythonActivity.mActivity, "");
-            // com.waterfall.youtube.ServicePythonnotificationhandler.start(org.kivy.android.PythonActivity.mActivity, "");
-        } catch (Exception e) {
-            Log.d("PlatformIntermediate", "Exception occurred while trying to start service: " + e.getMessage());
-        }
-        backgroundMessages.put(remoteMessageMap.get("unique_key").toString(), remoteMessageMap);
+        //try {
+        //    tw.com.famiclean.wh_fc.ServiceMyservice.start(org.kivy.android.PythonActivity.mActivity, "");
+            // tw.com.famiclean.wh_FC.ServiceMyservice.start(org.kivy.android.PythonActivity.mActivity, "");
+        //} catch (Exception e) {
+        //    Log.d("PlatformIntermediate", "Exception occurred while trying to start service: " + e.getMessage());
+        //}
+        //backgroundMessages.put(remoteMessageMap.get("unique_key").toString(), remoteMessageMap);
 
         // Read stored json
         String jsonText = readBackgroundFile(context);
