@@ -54,20 +54,47 @@ the steps:
   5.1 Download the entire src/python/pushyy directory into your project directory.
   
   5.2 Download src/python/python_notification_handler.py into your project directory, and modify it to add foreground support (the code will be provided later).
+      after testing, don't need this file
   
   5.3 Download src/python/python/libs into your project directory, and modify the following:
   
-      In libs/PlatformIntermediate.java: update the package name and the service name to match the value of services = Myservice:python_notification_handler.py in 
-      buildozer.spec. In this case the value is Myservice
+   In libs/PlatformIntermediate.java: Mark the service section as a comment 
+   
+   ~~update the package name and the service name to match the value of services = Myservice:python_notification_handler.py in 
+      buildozer.spec. In this case the value is Myservice~~
       
-      In libs/KivyFirebaseMessagingBackgroundExecutor.java: update the package name and service name similarly.
+
+   ```
+   public static void addbackroundMessage(Map<String, Object> remoteMessageMap, Context context) {
+   //try {
+   // com.test.testapp.ServiceMyservice.start(org.kivy.android.PythonActivity.mActivity, "");
+   //} catch (Exception e) {
+   //    Log.d("PlatformIntermediate", "Exception occurred while trying to start service: " + e.getMessage());
+   //}
+   ```
+
+   In libs/KivyFirebaseMessagingBackgroundExecutor.java: 
+   
+   Mark the service section as a comment
+   
+   ~~update the package name and service name similarly.~~
+   
+   ```
+   private static AtomicBoolean started = new AtomicBoolean(false);
+        public static void startBackgroundPythonService() {
+        Log.d("BackgroundExecutor", "Starting background service");
+        //com.test.testapp.ServiceMyservice.start(ContextHolder.getApplicationContext(), "");
+        Log.d("BackgroundExecutor", "Background service started");
+   ```
       
-      In libs/KivyFirebaseMessagingReceiver.java:
-      Change
+   In libs/KivyFirebaseMessagingReceiver.java:
+   
+   Change
+   ```
         Log.d("BTW, title is " + remoteMessage.getNotification().getTitle());
         Log.d("BTW", "title is " + remoteMessage.getNotification().getTitle());
         (The original author made a typo—Log.d requires two arguments)
-
+   ```
 6. Modify buildozer.spec:
    
    Ensure that the domain name and package name match the values used in your Firebase project.
@@ -84,7 +111,7 @@ the steps:
        For firebase-messaging and gson, refer to the official repositories for the latest versions.
        analytics can be left blank if unused.
 
-   6.7 Set services = Myservice:python_notification_handler.py
+   6.7 ~~Set services = Myservice:python_notification_handler.py~~
    
    
 At this point, the setup should be complete. You can now go to Firebase to create and test a message notification.
@@ -112,7 +139,8 @@ if platform == "android":
 ```
 use the class at on_start() of class mainapp
 
-### put nothing in the notification_handler. if do that it will cause sometimes app crash. but this file/services is still needed. if buildozer.spec doesn't content a services = Myservice:python_notification_handler.py description, it will be failed to build
+~~### put nothing in the notification_handler. if do that it will cause sometimes app crash. but this file/services is still needed. if buildozer.spec doesn't content a services = Myservice:python_notification_handler.py description, it will be failed to build~~
+
 in python_notification_handler.py:
 ```
 import time
