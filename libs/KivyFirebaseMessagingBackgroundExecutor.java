@@ -10,7 +10,7 @@ private static AtomicBoolean started = new AtomicBoolean(false);
     public static void startBackgroundPythonService() {
 
         Log.d("BackgroundExecutor", "Starting background service");
-        //tw.com.famiclean.wh_fc.ServiceMyservice.start(ContextHolder.getApplicationContext(), "");
+        //com.test.testapp.ServiceMyservice.start(ContextHolder.getApplicationContext(), "");
         Log.d("BackgroundExecutor", "Background service started");
 
     }
