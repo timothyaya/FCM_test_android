@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = Famiclean
+title = testapp
 
 # (str) Package name
-package.name = wh_fc
+package.name = testapp
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = tw.com.famiclean
+package.domain = com.test
 
 # (str) Source code where the main.py live
 source.dir = .
