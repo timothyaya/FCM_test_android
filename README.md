@@ -107,7 +107,7 @@ the steps:
    
    6.4 android.permissions = android.permission.INTERNET,   VIBRATE,FOREGROUND_SERVICE
    
-   6.5 android.api = 33  # (Using 34 may cause issues)
+   6.5 android.api = 34
    
    6.6 android.gradle_dependencies = com.google.firebase:firebase-messaging:24.1.1, com.google.code.gson:gson:2.8.9, com.google.firebase:firebase-analytics
        For firebase-messaging and gson, refer to the official repositories for the latest versions.
@@ -158,7 +158,7 @@ def start_foreground():
     NotificationBuilder = autoclass('android.app.Notification$Builder')
     NotificationManager = autoclass('android.app.NotificationManager')
     NotificationChannel = autoclass('android.app.NotificationChannel')
-    Build = autoclass('android.os.Build')  # ✅ 補這行
+    Build = autoclass('android.os.Build')
     Build.VERSION = autoclass('android.os.Build$VERSION')
     Build.VERSION_CODES = autoclass('android.os.Build$VERSION_CODES')
     String = autoclass('java.lang.String')
