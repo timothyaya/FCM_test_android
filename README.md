@@ -11,18 +11,20 @@ the steps:
   ./python-for-android/pythonforandroid/bootstraps/common/build/templates/build.tmpl.gradle, and make the following changes:
    
   2.1 Under the buildscript section in dependencies, add the following line after
-      
-      classpath 'com.android.tools.build:gradle:8.1.1 ->
-      classpath 'com.google.gms:google-services:4.4.2' ← (You can find the latest version on the Firebase website)
-      
+   ```
+   classpath 'com.android.tools.build:gradle:8.1.1 ->
+   classpath 'com.google.gms:google-services:4.4.2' ← (You can find the latest version on the Firebase website)
+   ```
   2.2 Find apply plugin: 'com.android.application' and add the following line directly below it:
-  
-      apply plugin: 'com.google.gms.google-services'
+   ```
+   apply plugin: 'com.google.gms.google-services'
+   ```
       
   2.3 At the bottom of the file, under the Dependencies: section, add:
-      ```
-      implementation platform('com.google.firebase:firebase-bom:33.1.2') ← (Get the latest version from Firebase)
-      ```
+   ```
+   implementation platform('com.google.firebase:firebase-bom:33.1.2') ← (Get the latest version from Firebase)
+   ```
+
 3. Modify ./python-for-android/pythonforandroid/bootstraps/sdl2/build/templates/AndroidManifest.tmpl.xml
    Before the closing </Dependencies> tag, insert:
    ```
