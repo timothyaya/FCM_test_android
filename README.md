@@ -25,8 +25,10 @@ the steps:
    implementation platform('com.google.firebase:firebase-bom:33.1.2') ← (Get the latest version from Firebase)
    ```
 
-3. Modify ./python-for-android/pythonforandroid/bootstraps/sdl2/build/templates/AndroidManifest.tmpl.xml
-   Before the closing </Dependencies> tag, insert:
+3. Modify  
+   3.1  ./python-for-android/pythonforandroid/bootstraps/sdl2/build/templates/AndroidManifest.tmpl.xml (python-for-android version before 2025/07)  
+   3.2  ./python-for-android/pythonforandroid/bootstraps/_sdl_common/build/templates/AndroidManifest.tmpl.xml (python-for-android version after 2025/07)  
+   Before the closing </Dependencies> tag, insert:  
    ```
    <service
      android:name="org.kivy.plugins.messaging.KivyFirebaseMessagingBackgroundService"
@@ -51,21 +53,14 @@ the steps:
    ```
    ./python-for-android/pythonforandroid/bootstraps/common/build
    ```
-5. Go to: https://github.com/Fox520/pushyy
-   
-  5.1 Download the entire src/python/pushyy directory into your project directory.
-  
-  5.2 Download src/python/python_notification_handler.py into your project directory, and modify it to add foreground support (the code will be provided later).
-      after testing, don't need this file
-  
-  5.3 Download src/python/python/libs into your project directory, and modify the following:
-  
-   In libs/PlatformIntermediate.java: Mark the service section as a comment 
-   
+5. Go to: https://github.com/Fox520/pushyy  
+  5.1 Download the entire src/python/pushyy directory into your project directory.  
+  5.2 ~~Download src/python/python_notification_handler.py into your project directory, and modify it to add foreground support (the code will be provided later).
+      after testing, don't need this file~~   
+  5.3 Download src/python/python/libs into your project directory, and modify the following:  
+   In libs/PlatformIntermediate.java: Mark the service section as a comment  
    ~~update the package name and the service name to match the value of services = Myservice:python_notification_handler.py in 
-      buildozer.spec. In this case the value is Myservice~~
-      
-
+      buildozer.spec. In this case the value is Myservice~~  
    ```
    public static void addbackroundMessage(Map<String, Object> remoteMessageMap, Context context) {
    //try {
@@ -100,6 +95,7 @@ the steps:
 6. Modify buildozer.spec:
    
    Ensure that the domain name and package name match the values used in your Firebase project.
+   6.1 requirements = python3,kivy,kivymd==1.0.2,pillow,requests,idna,urllib3,certifi,charset-normalizer,pyjnius,plyer,pycryptodome,android <- new for latest version of python-for-android 
    
    6.2 p4a.source_dir = python-for-android
    
@@ -107,7 +103,7 @@ the steps:
    
    6.4 android.permissions = android.permission.INTERNET,   VIBRATE,FOREGROUND_SERVICE
    
-   6.5 android.api = 34
+   6.5 android.api = 35 (requried by google play console)
    
    6.6 android.gradle_dependencies = com.google.firebase:firebase-messaging:24.1.1, com.google.code.gson:gson:2.8.9, com.google.firebase:firebase-analytics
        For firebase-messaging and gson, refer to the official repositories for the latest versions.
