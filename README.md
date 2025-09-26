@@ -105,7 +105,7 @@ the steps:
    
    6.5 android.api = 35 (requried by google play console)
    
-   6.6 android.gradle_dependencies = com.google.firebase:firebase-messaging:24.1.1, com.google.code.gson:gson:2.8.9, com.google.firebase:firebase-analytics
+   6.6 android.gradle_dependencies = com.google.firebase:firebase-messaging:24.1.1, com.google.code.gson:gson:2.8.9, com.google.firebase:firebase-analytics:21.5.0
        For firebase-messaging and gson, refer to the official repositories for the latest versions.
        analytics can be left blank if unused.
 
