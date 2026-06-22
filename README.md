@@ -49,11 +49,15 @@ the steps:
      </intent-filter>
    </receiver>
    ```
-4. In Firebase FCM, create a project, add an Android app, and obtain the google-services.json file.  Place this file in the directory:
+4. In Firebase FCM(https://console.firebase.google.com/?hl=zh-tw),  
+   create a project / select a project  
+   "add new application",  
+   obtain the google-services.json file.  
+   Place this file in the directory:  
    ```
    ./python-for-android/pythonforandroid/bootstraps/common/build
    ```
-5. Go to: https://github.com/Fox520/pushyy  
+6. Go to: https://github.com/Fox520/pushyy  
   5.1 Download the entire src/python/pushyy directory into your project directory.  
   5.2 ~~Download src/python/python_notification_handler.py into your project directory, and modify it to add foreground support (the code will be provided later).
       after testing, don't need this file~~   
@@ -92,7 +96,7 @@ the steps:
         Log.d("BTW", "title is " + remoteMessage.getNotification().getTitle());
         (The original author made a typo—Log.d requires two arguments)
    ```
-6. Modify buildozer.spec:
+7. Modify buildozer.spec:
    
    Ensure that the domain name and package name match the values used in your Firebase project.
    6.1 requirements = python3,kivy,kivymd==1.0.2,pillow,requests,idna,urllib3,certifi,charset-normalizer,pyjnius,plyer,pycryptodome,android <- new for latest version of python-for-android 
