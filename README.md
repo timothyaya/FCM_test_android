@@ -28,7 +28,7 @@ the steps:
 3. Modify  
    3.1  ./python-for-android/pythonforandroid/bootstraps/sdl2/build/templates/AndroidManifest.tmpl.xml (python-for-android version before 2025/07)  
    3.2  ./python-for-android/pythonforandroid/bootstraps/_sdl_common/build/templates/AndroidManifest.tmpl.xml (python-for-android version after 2025/07)  
-   Before the closing '</Application>' tag, insert:  
+   Before the closing '/Application' tag, insert:  
    ```
    <service
      android:name="org.kivy.plugins.messaging.KivyFirebaseMessagingBackgroundService"
