@@ -100,7 +100,7 @@ the steps:
    
    Ensure that the domain name and package name match the values used in your Firebase project.
    6.1 requirements = python3,kivy,kivymd==1.0.2,pillow,requests,idna,urllib3,certifi,charset-normalizer,pyjnius,plyer,pycryptodome,android <- new for latest version of python-for-android
-   # pyaes will cause build failed - 2026/08
+   ### pyaes will cause build failed - 2026/08
    
    6.2 p4a.source_dir = python-for-android
    
